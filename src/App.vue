@@ -1,8 +1,7 @@
 <template>
   <div>File Upload</div>
   <button @click="() => uploadFile()">Button</button>
-  <!-- {{ data }} -->
-  <div v-for="(d, i) in data.results" :key="i">{{ d }}</div>
+  <div v-for="(d, i) in data?.results" :key="i">{{ d }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -19,8 +18,6 @@ type OCRDocument = {
 const { data, error, isLoading, uploadFile } = useFileUpload<OCRDocument>({
   url: 'https://gist.githubusercontent.com/Giologic/7cabe9f72f42ffc61b3e5fce2c86c8a3/raw/dc803146ffd8ba2dba6955f033ac46c82a8d879d/dummy.json',
 })
-
-console.log(data.value)
 </script>
 
 <style>
