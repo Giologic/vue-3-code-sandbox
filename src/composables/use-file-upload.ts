@@ -10,7 +10,7 @@ interface State<T> {
 type UseUploadFileParams = {
   url: string
   config?: {
-    headers?: unknown
+    headers?: Record<string, never>
   }
 }
 
