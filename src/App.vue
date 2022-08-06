@@ -1,5 +1,6 @@
 <template>
   <div>File Upload</div>
+  <button @click="() => uploadFile()">Button</button>
 </template>
 
 <script lang="ts" setup>
@@ -10,9 +11,13 @@ type OCRDocument = {
   blocks: Array<string>
 }
 
-const { data, error, isLoading, uploadFile } = useFileUpload<OCRDocument>()
+// const dummyFile = new File(['foo'], 'foo.txt', {
+//   type: 'text/plain',
+// })
 
-console.log(data)
+const { data, error, isLoading, uploadFile } = useFileUpload<OCRDocument>('/data/dummy.json')
+
+console.log(data.value)
 </script>
 
 <style>
