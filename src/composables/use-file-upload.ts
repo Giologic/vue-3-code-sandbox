@@ -1,5 +1,4 @@
 import { Ref, ref } from 'vue'
-import createError from 'http-errors'
 
 interface State<T> {
   data: Ref<T | undefined>
