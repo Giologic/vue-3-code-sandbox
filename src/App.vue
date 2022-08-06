@@ -1,14 +1,19 @@
 <template>
   <div>File Upload</div>
   <button @click="() => uploadFile()">Button</button>
+  <!-- {{ data }} -->
+  <div v-for="(d, i) in data.results" :key="i">{{ d }}</div>
 </template>
 
 <script lang="ts" setup>
 import useFileUpload from './composables/use-file-upload'
 
-type OCRDocument = {
+type OCRDocumentPage = {
   page: string
   blocks: Array<string>
+}
+type OCRDocument = {
+  results: Array<OCRDocumentPage>
 }
 
 const { data, error, isLoading, uploadFile } = useFileUpload<OCRDocument>({
